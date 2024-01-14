@@ -6,5 +6,5 @@ import org.koin.dsl.module
 
 val screenModelsModule = module {
     factory { NoteListScreenModel(repository = get()) }
-    factory { NoteEditorScreenModel(repository = get()) }
+    factory { params -> NoteEditorScreenModel(repository = get(), noteId = params.get()) }
 }

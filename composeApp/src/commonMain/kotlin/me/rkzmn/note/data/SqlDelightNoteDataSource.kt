@@ -2,6 +2,7 @@ package me.rkzmn.note.data
 
 import app.cash.sqldelight.Query
 import app.cash.sqldelight.coroutines.asFlow
+import app.cash.sqldelight.coroutines.mapToList
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
@@ -25,7 +26,7 @@ class SqlDelightNoteDataSource(
         withContext(dispatchers.io) {
             with(note) {
                 queries.saveNote(
-                    id = id,
+                    id = id.takeIf { it > 0L },
                     title = title,
                     content = content,
                     colorHex = colorHex,
@@ -57,6 +58,6 @@ class SqlDelightNoteDataSource(
     }
 
     private val Query<Note>.flow: Flow<List<Note>>
-        get() = asFlow().map { it.executeAsList() }.flowOn(dispatchers.io)
+        get() = asFlow().mapToList(dispatchers.io).flowOn(dispatchers.io)
 
 }

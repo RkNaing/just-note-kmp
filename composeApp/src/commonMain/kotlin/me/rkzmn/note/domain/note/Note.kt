@@ -8,7 +8,7 @@ import me.rkzmn.note.presentation.ui.colors.RedPinkHex
 import me.rkzmn.note.presentation.ui.colors.VioletHex
 
 data class Note(
-    val id: Long,
+    val id: Long = 0L,
     val title: String,
     val content: String,
     val colorHex: Long,
