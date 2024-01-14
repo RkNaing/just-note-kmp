@@ -1,14 +1,40 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop.
+# JustNote
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+A minial note taking application built with Kotlin Multiplaform + Compose Multiplatform with clean architecture.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+**Targets**
+
+- Android
+- iOS
+- Desktop (JVM) for MacOs, Windows & Linux
+
+Techstack
+
+- Koin for dependency injection
+- SQLdelight for databse
+- Compose Multiplatform for shared UI
+- Voyager for Navigation & UI State Managment
+- Compose Material 3
+
+## Screenshots
+
+### Android
+
+| Notes List  | Note Editor  |
+|---|---|
+| ![Notes List Android](media/notes_list_android.png)  | ![Note Editor Android](media/note_editor_android.png)  |
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+### iOS
+
+| Notes List  | Note Editor  |
+|---|---|
+| ![Notes List iOS](media/notes_list_ios.png)  | ![Note Editor iOS](media/note_editor_ios.png)  |
+
+### MacOS
+
+| Notes List  | Note Editor  |
+|---|---|
+| ![Notes List MacOS](media/notes_list_macos.png)  | ![Note Editor MacOS](media/note_editor_macos.png)  |
+
+
